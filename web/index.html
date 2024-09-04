@@ -1,0 +1,68 @@
+<html>
+
+<head>
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ng_companion">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <title>ng_companion</title>
+  <link rel="manifest" href="manifest.json">
+
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = "2098684927";
+  </script>
+  <!-- This script adds the flutter initialization JS code -->
+  <script src="http://localhost:8080/flutter.js"></script>
+  <script src="interop.js"></script>
+</head>
+
+<body>
+  <script>
+    // window.addEventListener('flutter-initialized', function () {
+    //   console.log('Flutter is initialized.');
+
+    //   // Define interaction functions only after Flutter is ready
+    //   window.sendLanguageToFlutter = function (language) {
+    //     window.flutter.call('sendLanguageToFlutter', language);
+    //   };
+
+    //   window.receiveLanguageFromReact = function (callback) {
+    //     window.flutter.call('receiveLanguageFromReact', callback);
+    //   };
+
+    //   // Example: Send initial language to Flutter
+    //   window.sendLanguageToFlutter('en');
+
+    //   // Example: Set up receiving language updates from Flutter
+    //   window.receiveLanguageFromReact(function (language) {
+    //     console.log('Received language from Flutter:', language);
+    //   });
+    // });
+
+    // Start loading the Flutter app
+    window.addEventListener('load', function () {
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: async function (engineInitializer) {
+          await engineInitializer.autoStart();
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
